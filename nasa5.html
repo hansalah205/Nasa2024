@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about exoplanets, their discovery, and unique characteristics. Explore the wonders of exoplanets through interactive content and galleries.">
+    <title>Exoplanet Explorer</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Global Styles */
+        body, html {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #ffffff;
+            background: url('https://www.nasa.gov/wp-content/themes/nasa/assets/images/404-bg.jpg') no-repeat center center fixed;
+            background-size: cover;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            background: rgba(0, 0, 0, 0.8);
+            color: #ffffff;
+            padding: 40px 0;
+            text-align: center;
+            border-bottom: 2px solid #2980b9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Navigation */
+        nav {
+            background: #2980b9;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        nav ul li a:hover {
+            color: #f1c40f;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 50px 20px;
+            margin: 40px auto;
+            max-width: 900px;
+            background: rgba(44, 62, 80, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        /* Button Styles */
+        button {
+            background: linear-gradient(90deg, #16a085, #2980b9);
+            color: #ffffff;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background: linear-gradient(90deg, #27ae60, #3498db);
+            transform: scale(1.05);
+        }
+
+        /* Gallery Section */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+
+        .gallery img {
+            margin: 15px;
+            width: 180px;
+            height: 180px;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+        }
+
+        /* Footer Styles */
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            color: #ffffff;
+            padding: 30px;
+            text-align: center;
+            border-top: 2px solid #2980b9;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1.1rem;
+        }
+
+        /* Additional Styling */
+        a {
+            color: #f1c40f;
+        }
+
+        a:hover {
+            color: #e67e22;
+        }
+
+        /* Star Animation */
+        @keyframes twinkle {
+            0% { opacity: 0.5; }
+            50% { opacity: 1; }
+            100% { opacity: 0.5; }
+        }
+
+        .twinkle-star {
+            position: absolute;
+            background-color: #ffffff;
+            border-radius: 50%;
+            animation: twinkle 2s infinite ease-in-out;
+        }
+
+        .star-1 { width: 5px; height: 5px; top: 20%; left: 10%; animation-duration: 3s; }
+        .star-2 { width: 7px; height: 7px; top: 50%; left: 30%; animation-duration: 4s; }
+        .star-3 { width: 4px; height: 4px; top: 80%; left: 60%; animation-duration: 5s; }
+        .star-4 { width: 6px; height: 6px; top: 40%; left: 70%; animation-duration: 6s; }
+        .star-5 { width: 3px; height: 3px; top: 10%; left: 90%; animation-duration: 7s; }
+    </style>
+</head>
+<body>
+    <!-- Animated Stars -->
+    <div class="twinkle-star star-1"></div>
+    <div class="twinkle-star star-2"></div>
+    <div class="twinkle-star star-3"></div>
+    <div class="twinkle-star star-4"></div>
+    <div class="twinkle-star star-5"></div>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Welcome to Exoplanet Explorer</h1>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="#intro">What ?</a></li>
+			<li><a href="#importance">Why ?</a></li>
+            <li><a href="#types">Classifications</a></li>
+            <li><a href="#discovery">Discovery Techniques</a></li>
+            <li><a href="#gallery">Exoplanet Gallery</a></li>
+        </ul>
+    </nav>
+
+    <!-- Introduction Section -->
+    <section id="intro">
+        <h2>What are Exoplanets?</h2>
+        <p>Exoplanets are planets that orbit stars outside of our solar system. Since the first confirmed detection in 1992, astronomers have discovered thousands of these distant worlds. From scorching gas giants to rocky planets similar to Earth, exoplanets come in a remarkable variety of sizes and types, expanding our understanding of the universe.</p>
+        <button onclick="learnMore()">Learn More</button>
+    </section>
+
+	<!-- Exoplanet Importance Section -->
+<section id="importance">
+<style>
+    h3, h4 ,p {
+        text-align: left;
+    }
+</style>
+    <h2>Why Are Exoplanets Important for Advancing Our Understanding of the Universe?</h2>
+    <p>Exoplanets play a crucial role in the quest to understand the universe and the potential for life beyond Earth.</p>
+    
+    <h3>Key Reasons for Exoplanet Research:</h3>
+    <ul>
+        <li>
+            <h4>1. Search for Life Beyond Earth.</h4>
+            <p>Identifying habitable worlds and studying their atmospheres, climates, and compositions to determine potential for life.</p>
+        </li>
+        <li>
+            <h4>2. Understanding Planetary Formation and Evolution.</h4>
+            <p>Comparative analysis of exoplanet systems and our solar system reveals insights into planetary formation and evolution.</p>
+        </li>
+        <li>
+            <h4>3. Advancing Technology and Instrumentation.</h4>
+            <p>Exoplanet missions drive technological innovation, testing new instruments for detection and characterization.</p>
+        </li>
+        <li>
+            <h4>4. Informing Future Explorations.</h4>
+            <p>Data from current missions informs future project goals, such as detailed characterization of exoplanet atmospheres.</p>
+        </li>
+        <li>
+            <h4>5. Public Engagement and Education.</h4>
+            <p>Exoplanet discoveries spark public interest, providing an educational platform for students, educators, and the broader community.</p>
+        </li>
+    </ul>
+    
+    <p>Exoplanet research aligns with strategic goals, prioritizing the search for life, advancing scientific understanding, driving technological innovation, and inspiring global interest in space science.</p>
+</section>
+
+	<!-- Types section -->
+	<section id="types">
+    <h2>What are the different types of Exoplanets?</h2>
+    <h4>Exoplanets, or planets outside our solar system, are classified based on their physical characteristics, formation, and location. 
+	They can be classified on the basis of :</h4>
+	
+	<ul>
+		<li style="text-align: left;";>Classification by Size and Composition</li>
+		<li style="text-align: left;";>Classification by Temperature</li>
+		<li style="text-align: left;";>Classification by Orbital Characteristics</li>
+		<li style="text-align: left;";>Classification by Location Relative to the Star</li>
+		<li style="text-align: left;";>Classification by Formation and Atmosphere</li>
+		<li style="text-align: left;";>Classification by Atmospheric Composition</li>
+	</ul>
+	<p>For more details <a href="https://drive.google.com/file/d/16PAKKQSYSHXSzrF6MfiaTjhEQi3YH5ZM/view?usp=drive_link" onclick="window.location=this.href;return false;">CLICK HERE</a>
+</section>
+
+	
+	<!-- Discovery Techniques Section -->
+    <section id="discovery">
+        <h2>How Do We Discover Exoplanets?</h2>
+        <h4>Astronomers use several methods to detect exoplanets, including:</h4>
+        <ul>
+            <li style="text-align: left;"><strong>Transit Method:</strong> Observing a dip in a star’s brightness as a planet passes in front of it.</li>
+            <li style="text-align: left;"><strong>Radial Velocity:</strong> Measuring the star’s wobble caused by gravitational pull from an orbiting planet.</li>
+            <li style="text-align: left;"><strong>Direct Imaging:</strong> Capturing direct images of exoplanets using advanced telescopes.</li>
+        </ul>
+    </section>
+
+    <!-- Exoplanet Gallery Section -->
+    <section id="gallery">
+        <h2>Explore the Exoplanet Gallery</h2>
+        <div class="gallery">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Stellar_%289460796504%29.jpg/220px-Stellar_%289460796504%29.jpg" alt="Pillars of Creation">
+            <img src="https://i.pinimg.com/564x/c2/8d/71/c28d71a80cf35df936bec7f816e34525.jpg" alt="Exoplanet Landscape">
+            <img src="https://helios-i.mashable.com/imagery/articles/01HNUvMxTcL83hnoMk4OrOO/hero-image.fill.size_1248x702.v1701462196.jpg" alt="Exoplanet Orbit">
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <footer id="contact">
+        <h2>Contact Us</h2>
+        <p style="text-align: center;">Have questions or feedback? Reach out to us at <strong>hansalah205@gmail.com</strong>.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        function learnMore() {
+            alert("Exoplanets are worlds that expand our understanding of planetary systems beyond our own. With advanced telescopes and detection techniques, we continue to explore these fascinating objects.");
+        }
+    </script>
+</body>
+</html>

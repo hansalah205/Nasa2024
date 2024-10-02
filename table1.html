@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about exoplanets, their discovery, and unique characteristics. Explore the wonders of exoplanets through interactive content and galleries.">
+    <title>Exoplanet Explorer</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Global Styles */
+        body, html {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #ffffff;
+            background: url('https://www.nasa.gov/wp-content/themes/nasa/assets/images/404-bg.jpg') no-repeat center center fixed;
+            background-size: cover;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            background: rgba(0, 0, 0, 0.8);
+            color: #ffffff;
+            padding: 40px 0;
+            text-align: center;
+            border-bottom: 2px solid #2980b9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Navigation */
+        nav {
+            background: #2980b9;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        nav ul li a:hover {
+            color: #f1c40f;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 50px 20px;
+            margin: 40px auto;
+            max-width: 900px;
+            background: rgba(44, 62, 80, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        /* Button Styles */
+        button {
+            background: linear-gradient(90deg, #16a085, #2980b9);
+            color: #ffffff;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background: linear-gradient(90deg, #27ae60, #3498db);
+            transform: scale(1.05);
+        }
+
+        /* Gallery Section */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+
+        .gallery img {
+            margin: 15px;
+            width: 180px;
+            height: 180px;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+        }
+
+        /* Footer Styles */
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            color: #ffffff;
+            padding: 30px;
+            text-align: center;
+            border-top: 2px solid #2980b9;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1.1rem;
+        }
+
+        /* Additional Styling */
+        a {
+            color: #f1c40f;
+        }
+
+        a:hover {
+            color: #e67e22;
+        }
+
+        /* Star Animation */
+        @keyframes twinkle {
+            0% { opacity: 0.5; }
+            50% { opacity: 1; }
+            100% { opacity: 0.5; }
+        }
+
+        .twinkle-star {
+            position: absolute;
+            background-color: #ffffff;
+            border-radius: 50%;
+            animation: twinkle 2s infinite ease-in-out;
+        }
+
+        .star-1 { width: 5px; height: 5px; top: 20%; left: 10%; animation-duration: 3s; }
+        .star-2 { width: 7px; height: 7px; top: 50%; left: 30%; animation-duration: 4s; }
+        .star-3 { width: 4px; height: 4px; top: 80%; left: 60%; animation-duration: 5s; }
+        .star-4 { width: 6px; height: 6px; top: 40%; left: 70%; animation-duration: 6s; }
+        .star-5 { width: 3px; height: 3px; top: 10%; left: 90%; animation-duration: 7s; }
+    </style>
+</head>
+<body>
+    <!-- Animated Stars -->
+    <div class="twinkle-star star-1"></div>
+    <div class="twinkle-star star-2"></div>
+    <div class="twinkle-star star-3"></div>
+    <div class="twinkle-star star-4"></div>
+    <div class="twinkle-star star-5"></div>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Welcome to Exoplanet Explorer</h1>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="#exoplanet-size-table">Size</a></li>
+			<li><a href="#temperature-categories">Temperature</a></li>
+            <li><a href="#orbital-classification">Orbital Characteristics</a></li>
+            <li><a href="#location-classification">Relative Location</a></li>
+            <li><a href="#formation-atmosphere-classification">Formation</a></li>
+			<li><a href="#atmospheric-composition-classification">Composition</a></li>
+        </ul>
+    </nav>
+
+    <!-- Introduction Section -->
+<section id="exoplanet-size-table">
+	<style>
+    #exoplanet-size-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#temperature-categories-table th, #exoplanet-size-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+#exoplanet-size-table th {
+    background-color: #2980b9;
+}
+
+}
+	</style>
+    <h3 style="text-align: left;">1.  Classification by Size and Composition Gas Giants.</h3>
+	<style>
+    #exoplanet-size-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#exoplanet-size-table th, #exoplanet-size-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+#exoplanet-size-table th {
+    background-color: #2980b9;<!-- heading -->
+
+  </style>
+    
+    <table id="exoplanet-size-table">
+        <thead>
+            <tr>
+                <th>Type</th>
+                <th>Description</th>
+                <th>Characteristics</th>
+                <th>Examples</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Hot Jupiters</td>
+                <td>Large gas giants orbiting close to their stars</td>
+                <td>Extreme heat, massive size</td>
+                <td>HD 209458b, 51 Pegasi b</td>
+            </tr>
+            <tr>
+                <td>Super-Earths</td>
+                <td>Rocky planets larger than Earth but smaller than Neptune</td>
+                <td>Potentially habitable, diverse compositions</td>
+                <td>Kepler-452b, Gliese 667 Cc</td>
+            </tr>
+            <tr>
+                <td>Mini-Neptunes</td>
+                <td>Gas-rich planets smaller than Neptune</td>
+                <td>Atmospheric diversity, possible moons</td>
+                <td>Kepler-11b, HD 40307g</td>
+            </tr>
+            <tr>
+                <td>Earth-like Planets</td>
+                <td>Rocky planets with conditions similar to those of Earth</td>
+                <td>Habitable zones, potential biosignatures</td>
+                <td>Proxima b, TRAPPIST-1e</td>
+            </tr>
+            <tr>
+                <td>Ice Giants</td>
+                <td>Cold gas giants composed primarily of water, ammonia, and methane ices</td>
+                <td>Low temperatures, high pressures</td>
+                <td>Uranus, Neptune</td>
+            </tr>
+            <tr>
+                <td>Gas Giants</td>
+                <td>Large planets composed primarily of hydrogen and helium gases</td>
+                <td>Massive size, atmospheric storm systems</td>
+                <td>Jupiter, Saturn</td>
+            </tr>
+            <tr>
+                <td>Terrestrial Planets</td>
+                <td>Rocky planets with solid surfaces</td>
+                <td>Diverse geology, potential habitability</td>
+                <td>Earth, Mars</td>
+            </tr>
+            <tr>
+                <td>Neptune-like Planets</td>
+                <td>Cold gas giants with compositions similar to Neptune's</td>
+                <td>Low temperatures, high pressures</td>
+                <td>Neptune, HD 209458b</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+	<section id="temperature-categories">
+	<style>
+    #temperature-categories-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#temperature-categories-table th, #temperature-categories-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+#temperature-categories-table th {
+    background-color: #2980b9;
+}
+
+}
+	</style>
+    <h3 style="text-align: left;">2.  Exoplanet Temperature Categories.</h3>
+    
+    <table id="temperature-categories-table">
+        <thead>
+            <tr>
+                <th>Category</th>
+                <th>Description</th>
+                <th>Characteristics</th>
+                <th>Examples</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Hot Exoplanets (Hot Jupiters)</td>
+                <td>Planets with very short orbital periods, located close to their host stars</td>
+                <td>Extremely high surface temperatures due to proximity to star</td>
+                <td>51 Pegasi b</td>
+            </tr>
+            <tr>
+                <td>Warm Exoplanets</td>
+                <td>Planets in or near the habitable zone with moderate temperatures</td>
+                <td>Temperatures allowing for diverse atmospheric and surface conditions</td>
+                <td>Kepler-452b, TRAPPIST-1e</td>
+            </tr>
+            <tr>
+                <td>Cold Exoplanets</td>
+                <td>Planets far from their stars with very low surface temperatures</td>
+                <td>Similar to or colder than Neptune/Uranus, with long orbital periods and icy surfaces</td>
+                <td>Neptune, Uranus, HD 209458b</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+<section id="orbital-classification">
+    <style>
+        #orbital-classification-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        #orbital-classification-table th, #orbital-classification-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        
+        #orbital-classification-table th {
+            background-color: #2980b9;
+        }
+    </style>
+    
+    <h3 style="text-align: left;">3. Classification of Exoplanets by Orbital Characteristics.</h3>
+    
+    <table id="orbital-classification-table">
+        <thead>
+            <tr>
+                <th>Category</th>
+                <th>Description</th>
+                <th>Characteristics</th>
+                <th>Examples</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Circumbinary Planets</td>
+                <td>Planets orbiting around two stars instead of one</td>
+                <td>Unique stability challenges, potential for diverse environments</td>
+                <td>Kepler-16b</td>
+            </tr>
+            
+            <tr>
+                <td>Rogue Planets</td>
+                <td>Planets not gravitationally bound to any star, drifting freely</td>
+                <td>Formed in planetary systems, ejected due to gravitational interactions</td>
+                <td></td>
+            </tr>
+            
+            <tr>
+                <td>Pulsar Planets</td>
+                <td>Planets orbiting highly magnetized, rapidly rotating neutron stars (pulsars)</td>
+                <td>Extreme environments due to intense radiation</td>
+                <td>PSR B1257+12 system</td>
+            </tr>
+            
+            <tr>
+                <td>Tidally Locked Planets</td>
+                <td>Planets with permanent day and night sides due to tidal locking</td>
+                <td>Stark temperature contrasts, affecting atmospheric dynamics and habitability</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+<section id="location-classification">
+    <style>
+        #location-classification-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        #location-classification-table th, #location-classification-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        
+        #location-classification-table th {
+            background-color: #2980b9;
+        }
+    </style>
+    
+    <h3 style="text-align: left;">4. Classification of Exoplanets by Location Relative to the Star.</h3>
+    
+    <table id="location-classification-table">
+        <thead>
+            <tr>
+                <th>Category</th>
+                <th>Description</th>
+                <th>Characteristics</th>
+                <th>Examples</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Inner Planets (Hot Zone)</td>
+                <td>Planets very close to their star, within the "hot zone"</td>
+                <td>High surface temperatures, rapid orbital periods, harsh environments</td>
+                <td>HD 209458b, 51 Pegasi b</td>
+            </tr>
+            
+            <tr>
+                <td>Habitable Zone Planets</td>
+                <td>Planets in the "Goldilocks Zone" where liquid water can exist</td>
+                <td>Moderate temperatures, potential for life, prime candidates for habitability studies</td>
+                <td>Kepler-452b, TRAPPIST-1e</td>
+            </tr>
+            
+            <tr>
+                <td>Outer Planets (Cold Zone)</td>
+                <td>Planets far from their star, beyond the habitable zone, in the "cold zone"</td>
+                <td>Very low temperatures, slow orbital periods, icy or frozen gas-covered surfaces</td>
+                <td>Uranus, Neptune, HD 40307g</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+<section id="formation-atmosphere-classification">
+    <style>
+        #formation-atmosphere-classification-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        #formation-atmosphere-classification-table th, #formation-atmosphere-classification-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        
+        #formation-atmosphere-classification-table th {
+            background-color: #2980b9;
+        }
+    </style>
+    
+    <h3 style="text-align: left;">5. Classification of Exoplanets by Formation and Atmospheric Characteristics.</h3>
+    
+    <table id="formation-atmosphere-classification-table">
+        <thead>
+            <tr>
+                <th>Category</th>
+                <th>Description</th>
+                <th>Characteristics</th>
+                <th>Examples</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Water Worlds</td>
+                <td>Planets covered by deep global oceans</td>
+                <td>Thick atmospheres, lack of solid land surface, potential subsurface oceans</td>
+                <td>Kepler-22b, Gliese 1214 b</td>
+            </tr>
+            
+            <tr>
+                <td>Carbon Planets</td>
+                <td>Planets with carbon-dominated surface composition</td>
+                <td>Surfaces covered with carbon compounds (graphite, diamonds), exotic landscapes</td>
+                <td>Hypothetical (theoretical models)</td>
+            </tr>
+            
+            <tr>
+                <td>Lava Worlds</td>
+                <td>Planets with extremely high surface temperatures</td>
+                <td>Molten lava surfaces, harsh environments, volcanic activity</td>
+                <td>55 Cancri e, Kepler-10b</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+<section id="atmospheric-composition-classification">
+    <style>
+        #atmospheric-composition-classification-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        #atmospheric-composition-classification-table th, #atmospheric-composition-classification-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        
+        #atmospheric-composition-classification-table th {
+            background-color: #2980b9;
+        }
+    </style>
+    
+    <h3 style="text-align: left;">6. Classification of Exoplanets by Atmospheric Composition.</h3>
+    
+    <table id="atmospheric-composition-classification-table">
+        <thead>
+            <tr>
+                <th>Category</th>
+                <th>Description</th>
+                <th>Characteristics</th>
+                <th>Examples</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Hydrogen-rich Atmosphere Planets</td>
+                <td>Thick atmospheres dominated by hydrogen and helium</td>
+                <td>Deep and dense atmospheres, strong greenhouse effects</td>
+                <td>Jupiter, Saturn, HD 209458b</td>
+            </tr>
+            
+            <tr>
+                <td>Thick Atmosphere Planets</td>
+                <td>Dense atmospheres with gases like CO2, CH4, or NH3</td>
+                <td>High surface pressure, dynamic weather systems, cloud formations</td>
+                <td>Venus, Titan, Kepler-11b</td>
+            </tr>
+            
+            <tr>
+                <td>Thin Atmosphere Planets</td>
+                <td>Very thin atmospheres, similar to Mars</td>
+                <td>Weak atmospheric pressure, barren/rocky surfaces, low temperatures</td>
+                <td>Mars, TRAPPIST-1b, Kepler-10b</td>
+            </tr>
+        </tbody>
+    </table>
+	</section>
+
+	
+
+    <!-- Contact Section -->
+    <footer id="contact">
+        <h2>Contact Us</h2>
+        <p>Have questions or feedback? Reach out to us at <strong>hansalah205@gmail.com</strong>.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        function learnMore() {
+            alert("Exoplanets are worlds that expand our understanding of planetary systems beyond our own. With advanced telescopes and detection techniques, we continue to explore these fascinating objects.");
+        }
+    </script>
+</body>
+</html>
